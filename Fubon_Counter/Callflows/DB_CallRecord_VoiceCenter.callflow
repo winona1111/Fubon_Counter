@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datatypes="http://studio.genesyslab.com/common/datatypes/" xmlns:gvp="http://studio.genesyslab.com/gvp/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://studio.genesyslab.com/common/datatypes/ http://studio.genesyslab.com/common/#//datatypes">
+  <gvp:CallflowDiagram xmi:id="_RF4M8IobEeG_nt9_QYQUcg" name="DB_CallRecord_VoiceCenter" designedUsing="Composer 8.1.561.23" callflowType="Subcallflow">
+    <history>8.1.3</history>
+    <history>8.1.300.01</history>
+    <blocks xmi:type="gvp:EntryBlock" xmi:id="_0TDncMlhEeKE2tP5OBlA8w" name="Entry1" starting="true" category="Entry" applicationRoot="../src/ComposerRoot.vxml">
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_wGjeEe6wwJi9ak-h8A" name="APP_LANGUAGE" value="'en-US'" description="Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_wWjeEe6wwJi9ak-h8A" name="APP_ASR_LANGUAGE" value="'en-US'" description="ASR Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_wmjeEe6wwJi9ak-h8A" name="PREV_APP_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_w2jeEe6wwJi9ak-h8A" name="PREV_APP_ASR_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_xGjeEe6wwJi9ak-h8A" name="GRAMMARFILEDIR" value="'../Resources/Grammars'" description="Grammar File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_xWjeEe6wwJi9ak-h8A" name="VOXFILEDIR" value="'../Resources/Prompts'" description="Audio File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_xmjeEe6wwJi9ak-h8A" name="SCRIPTSDIR" value="'../Scripts'" description="JavaScript Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_x2jeEe6wwJi9ak-h8A" name="EnableReports" value="false" description="Reporting Flag" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_yGjeEe6wwJi9ak-h8A" name="EnableSNMP" value="false" description="Flag for enabling SNMP Traps" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_yWjeEe6wwJi9ak-h8A" name="CallUUID" value="session.connection.uuid" description="Universal ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_ymjeEe6wwJi9ak-h8A" name="GVPSessionID" value="session.genesys.userdata[&quot;GVP-Session-ID&quot;]" description="GVP Session ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_y2jeEe6wwJi9ak-h8A" name="DNIS" value="getDNIS()" description="DNIS associated with Called phone number" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_zGjeEe6wwJi9ak-h8A" name="ANI" value="getANI()" description="ANI associated with the calling party." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_zWjeEe6wwJi9ak-h8A" name="LAST_EVENT_NAME" value="'undefined'" description="Last event or error name" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_zmjeEe6wwJi9ak-h8A" name="LAST_EVENT_MSG" value="'undefined'" description="Last event or error details" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_z2jeEe6wwJi9ak-h8A" name="LAST_EVENT_URL" value="'undefined'" description="URL of the last event." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_0GjeEe6wwJi9ak-h8A" name="LAST_EVENT_ELEMENT" value="'undefined'" description="Element name of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_0WjeEe6wwJi9ak-h8A" name="LAST_EVENT_LINE" value="'undefined'" description="Line number of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_0mjeEe6wwJi9ak-h8A" name="EnableFCR" value="true" description="Flag for enabling Full Call Recording" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_02jeEe6wwJi9ak-h8A" name="COMPOSER_WSSTUBBING" value="'0'" description="Flag to control WebServices Stubbing. '1' - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_1GjeEe6wwJi9ak-h8A" name="USE_LCASE_USERDATAKEY" value="0" description="Flag to control lowerCase lookup in UserData array. 1 - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_1WjeEe6wwJi9ak-h8A" name="OCS_RecordURI" value="getCallflowRecordURI()" description="OCS Record URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_1mjeEe6wwJi9ak-h8A" name="OCS_URI" value="getCallflowOCSURI()" description="OCS URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_12jeEe6wwJi9ak-h8A" name="OCS_Record" value="getCallflowOCSRecord()" description="OCS Record" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_2GjeEe6wwJi9ak-h8A" name="g_verify" value="undefined" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_2WjeEe6wwJi9ak-h8A" name="g_custInfo" value="undefined" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_2mjeEe6wwJi9ak-h8A" name="g_system" value="undefined" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_22jeEe6wwJi9ak-h8A" name="g_subdialogData" value="undefined" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_3GjeEe6wwJi9ak-h8A" name="g_reportLog" value="undefined" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_3WjeEe6wwJi9ak-h8A" name="v_endTime" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_3mjeEe6wwJi9ak-h8A" name="v_birth" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_32jeEe6wwJi9ak-h8A" name="v_phone" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_4GjeEe6wwJi9ak-h8A" name="v_ID" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_4WjeEe6wwJi9ak-h8A" name="v_reason" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_4mjeEe6wwJi9ak-h8A" name="v_reasonMemo" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_42jeEe6wwJi9ak-h8A" name="v_riskLevel" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_5GjeEe6wwJi9ak-h8A" name="v_QcallType" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_5WjeEe6wwJi9ak-h8A" name="v_inType" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_5mjeEe6wwJi9ak-h8A" name="v_recordGVP" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_52jeEe6wwJi9ak-h8A" name="v_transactionCode" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_6GjeEe6wwJi9ak-h8A" name="v_SMScode" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_6WjeEe6wwJi9ak-h8A" name="v_return" value="&quot;&quot;" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_6mjeEe6wwJi9ak-h8A" name="v_temp" value="&quot;&quot;" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_YZV_62jeEe6wwJi9ak-h8A" name="v_beginTime" value="undefined" description="Enter Description" type="User"/>
+    </blocks>
+    <blocks xmi:type="gvp:ExitBlock" xmi:id="_0afsMMlhEeKE2tP5OBlA8w" name="Exit1" terminating="true" category="Exit" returnMode="true">
+      <returnValues>g_verify</returnValues>
+      <returnValues>g_custInfo</returnValues>
+      <returnValues>g_system</returnValues>
+      <returnValues>g_subdialogData</returnValues>
+      <returnValues>g_reportLog</returnValues>
+    </blocks>
+    <blocks xmi:type="gvp:DBDataBlock" xmi:id="_LVwqKWjdEe6wwJi9ak-h8A" name="DB_rewrite" category="DB Data" connectionProfile="TFB_gcti_ivr_csr" queryType="StoredProcedure" storedProcedure="rO0ABXNyAD1jb20uZ2VuZXN5c2xhYi5jb21wb3Nlci5zdG9yZWRwcm9jZWR1cmVoZWxwZXIubW9kZWwuQ1ZEQlF1ZXJ5cAahYM595/4CAAJMAApwYXJhbWV0ZXJzdAAQTGphdmEvdXRpbC9MaXN0O0wACXByb2NlZHVyZXQAQ0xjb20vZ2VuZXN5c2xhYi9jb21wb3Nlci9zdG9yZWRwcm9jZWR1cmVoZWxwZXIvbW9kZWwvQ1ZEQlByb2NlZHVyZTt4cHNyABNqYXZhLnV0aWwuQXJyYXlMaXN0eIHSHZnHYZ0DAAFJAARzaXpleHAAAAAVdwQAAAAVc3IAQWNvbS5nZW5lc3lzbGFiLmNvbXBvc2VyLnN0b3JlZHByb2NlZHVyZWhlbHBlci5tb2RlbC5DVkRCUHJvY1BhcmFtpp9NZapVspkCAAZJAAhkYXRhVHlwZUkADXBhcmFtZXRlclR5cGVaAAx2YWx1ZVZhclR5cGVMAA1wYXJhbWV0ZXJOYW1ldAASTGphdmEvbGFuZy9TdHJpbmc7TAAOcGFyYW1ldGVyVmFsdWVxAH4AB0wACXByb2NlZHVyZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwAAAABAAAAAUBdAAMUkVUVVJOX1ZBTFVFdAAIdl9yZXR1cm5wc3EAfgAGAAAADAAAAAEBdAAIQ2FsbFVVSUR0AAhDYWxsVVVJRHBzcQB+AAYAAAAMAAAAAQF0AApCZWdpbl9UaW1ldAALdl9iZWdpblRpbWVwc3EAfgAGAAAADAAAAAEBdAAIRW5kX1RpbWV0AAl2X2VuZFRpbWVwc3EAfgAGAAAADAAAAAEBdAAJU2Vzc2lvbklEdAALdl9TZXNzaW9uSURwc3EAfgAGAAAABAAAAAEBdAAGUmVhc29udAAIdl9yZWFzb25wc3EAfgAGAAAADAAAAAEBdAALUmVhc29uX01lbW90AAx2X3JlYXNvbk1lbW9wc3EAfgAGAAAADAAAAAEBdAAKUWNhbGxfVHlwZXQAC3ZfUWNhbGxUeXBlcHNxAH4ABgAAAAwAAAABAXQAB0luX1R5cGV0AAh2X2luVHlwZXBzcQB+AAYAAAAMAAAAAQF0AAJJRHQABHZfSURwc3EAfgAGAAAADAAAAAEBdAAIQmlydGhkYXl0AAd2X2JpcnRocHNxAH4ABgAAAAwAAAABAXQABk1vYmlsZXQAB3ZfcGhvbmVwc3EAfgAGAAAADAAAAAEBdAAHU01TQ29kZXQACXZfU01TY29kZXBzcQB+AAYAAAAMAAAAAQF0AApSaXNrX0xldmVsdAALdl9yaXNrTGV2ZWxwc3EAfgAGAAAADAAAAAEBdAAKUmVjb3JkX0dWUHQAC3ZfcmVjb3JkR1ZQcHNxAH4ABgAAAAwAAAABAXQAEFRyYW5zYWN0aW9uX0NvZGV0ABF2X3RyYW5zYWN0aW9uQ29kZXBzcQB+AAYAAAAMAAAAAQF0AAlJTl9SRVNWMDF0AAl2X2luUkVTVjFwc3EAfgAGAAAADAAAAAEBdAAJSU5fUkVTVjAydAAJdl9pblJFU1YycHNxAH4ABgAAAAwAAAABAXQACUlOX1JFU1YwM3QACXZfaW5SRVNWM3BzcQB+AAYAAAAMAAAAAQF0AAlJTl9SRVNWMDR0AAZ2X3RlbXBwc3EAfgAGAAAADAAAAAEBdAAJSU5fUkVTVjA1cQB+AERweHNyAEFjb20uZ2VuZXN5c2xhYi5jb21wb3Nlci5zdG9yZWRwcm9jZWR1cmVoZWxwZXIubW9kZWwuQ1ZEQlByb2NlZHVyZSmPPqMiBDuDAgAHWgAHaXNTdGFsZVoADHJldHVybnNWYWx1ZUwAC3BhY2thZ2VOYW1lcQB+AAdMAApwYXJhbWV0ZXJzcQB+AAFMAA1wcm9jZWR1cmVOYW1lcQB+AAdMAAZzY2hlbWF0AEBMY29tL2dlbmVzeXNsYWIvY29tcG9zZXIvc3RvcmVkcHJvY2VkdXJlaGVscGVyL21vZGVsL0NWREJTY2hlbWE7TAAHc3lub255bXEAfgAHeHABAXBzcgAQamF2YS51dGlsLlZlY3RvctmXfVuAO68BAwADSQARY2FwYWNpdHlJbmNyZW1lbnRJAAxlbGVtZW50Q291bnRbAAtlbGVtZW50RGF0YXQAE1tMamF2YS9sYW5nL09iamVjdDt4cAAAAAAAAAAVdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAAKHEAfgAJcQB+AAxxAH4AD3EAfgAScQB+ABVxAH4AGHEAfgAbcQB+AB5xAH4AIXEAfgAkcQB+ACdxAH4AKnEAfgAtcQB+ADBxAH4AM3EAfgA2cQB+ADlxAH4APHEAfgA/cQB+AEJxAH4ARXBwcHBwcHBwcHBwcHBwcHBwcHB4dAAfU1BfSVZSX0NhbGxfUmVjb3Jkc19Wb2ljZUNlbnRlcnNyAD5jb20uZ2VuZXN5c2xhYi5jb21wb3Nlci5zdG9yZWRwcm9jZWR1cmVoZWxwZXIubW9kZWwuQ1ZEQlNjaGVtYdPZQuOaYcH0AgACTAAKcHJvY2VkdXJlc3QAD0xqYXZhL3V0aWwvTWFwO0wACnNjaGVtYU5hbWVxAH4AB3hwc3IAEWphdmEudXRpbC5UcmVlTWFwDMH2Pi0lauYDAAFMAApjb21wYXJhdG9ydAAWTGphdmEvdXRpbC9Db21wYXJhdG9yO3hwcHcEAAAAAnQAF1NQX0lWUl9DYWxsX1JlY29yZHNfSU5Tc3EAfgBHAQFwc3EAfgBKAAAAAAAAAAB1cQB+AE0AAAAKcHBwcHBwcHBwcHhxAH4AVnEAfgBScHEAfgBPcQB+AEl4dAADZGJvcA==" recordsVariable="v_returnVar" columnNamesVariable="ANI">
+      <exceptions>error</exceptions>
+      <customExceptions>error</customExceptions>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkQGjeEe6wwJi9ak-h8A" name="RETURN_VALUE" value="{v_return}" description="INTEGER" type="return"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkQWjeEe6wwJi9ak-h8A" name="CallUUID" value="{CallUUID}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkQmjeEe6wwJi9ak-h8A" name="Begin_Time" value="{v_beginTime}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkQ2jeEe6wwJi9ak-h8A" name="End_Time" value="{v_endTime}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkRGjeEe6wwJi9ak-h8A" name="SessionID" value="{v_SessionID}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkRWjeEe6wwJi9ak-h8A" name="Reason" value="{v_reason}" description="INTEGER"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkRmjeEe6wwJi9ak-h8A" name="Reason_Memo" value="{v_reasonMemo}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkR2jeEe6wwJi9ak-h8A" name="Qcall_Type" value="{v_QcallType}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkSGjeEe6wwJi9ak-h8A" name="In_Type" value="{v_inType}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkSWjeEe6wwJi9ak-h8A" name="ID" value="{v_ID}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkSmjeEe6wwJi9ak-h8A" name="Birthday" value="{v_birth}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkS2jeEe6wwJi9ak-h8A" name="Mobile" value="{v_phone}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkTGjeEe6wwJi9ak-h8A" name="SMSCode" value="{v_SMScode}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkTWjeEe6wwJi9ak-h8A" name="Risk_Level" value="{v_riskLevel}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkTmjeEe6wwJi9ak-h8A" name="Record_GVP" value="{v_recordGVP}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkT2jeEe6wwJi9ak-h8A" name="Transaction_Code" value="{v_transactionCode}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkUGjeEe6wwJi9ak-h8A" name="IN_RESV01" value="{v_inRESV1}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkUWjeEe6wwJi9ak-h8A" name="IN_RESV02" value="{v_inRESV2}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkUmjeEe6wwJi9ak-h8A" name="IN_RESV03" value="{v_inRESV3}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkU2jeEe6wwJi9ak-h8A" name="IN_RESV04" value="{v_temp}" description="VARCHAR"/>
+      <spParameters xmi:type="datatypes:Parameter" xmi:id="_ZuQkVGjeEe6wwJi9ak-h8A" name="IN_RESV05" value="{v_temp}" description="VARCHAR"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_LVwqP2jdEe6wwJi9ak-h8A" name="Assign_updateInfo" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqQGjdEe6wwJi9ak-h8A" Key="v_endTime" Value="new Date(new Date().getTime() - new Date().getTimezoneOffset()*60*1000).toISOString().substr(0,19).replace('T', ' ')"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqQWjdEe6wwJi9ak-h8A" Key="v_birth" Value="AppState.g_custInfo[&quot;birth&quot;]"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqQmjdEe6wwJi9ak-h8A" Key="v_phone" Value="AppState.g_custInfo[&quot;phone&quot;]"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqQ2jdEe6wwJi9ak-h8A" Key="v_ID" Value="AppState.g_custInfo[&quot;ID&quot;]"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqRGjdEe6wwJi9ak-h8A" Key="v_reason" Value="AppState.g_reportLog.Reason"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqRWjdEe6wwJi9ak-h8A" Key="v_reasonMemo" Value="AppState.g_reportLog.Reason_Memo"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqRmjdEe6wwJi9ak-h8A" Key="v_riskLevel" Value="AppState.g_subdialogData[&quot;Counter_Main&quot;].RiskLevel"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqR2jdEe6wwJi9ak-h8A" Key="v_QcallType" Value="AppState.g_reportLog.Qcall_Type"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqSGjdEe6wwJi9ak-h8A" Key="v_inType" Value="'intype'"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqSWjdEe6wwJi9ak-h8A" Key="v_recordGVP" Value="''"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqSmjdEe6wwJi9ak-h8A" Key="v_transactionCode" Value="'transcode'"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_LVwqS2jdEe6wwJi9ak-h8A" Key="v_SMScode" Value="AppState.g_subdialogData[&quot;Counter_Main&quot;].AISSCode;"/>
+    </blocks>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_Owz0sGjdEe6wwJi9ak-h8A" fromBlock="_0TDncMlhEeKE2tP5OBlA8w" toBlock="_LVwqP2jdEe6wwJi9ak-h8A"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_O_fw8GjdEe6wwJi9ak-h8A" fromBlock="_LVwqP2jdEe6wwJi9ak-h8A" toBlock="_LVwqKWjdEe6wwJi9ak-h8A"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_Q9yCkGjdEe6wwJi9ak-h8A" fromBlock="_LVwqKWjdEe6wwJi9ak-h8A" toBlock="_0afsMMlhEeKE2tP5OBlA8w"/>
+    <links xmi:type="gvp:CallflowExceptionLink" xmi:id="_RLfHYGjdEe6wwJi9ak-h8A" name="error" fromBlock="_LVwqKWjdEe6wwJi9ak-h8A" toBlock="_0afsMMlhEeKE2tP5OBlA8w"/>
+    <namespaces xmi:type="datatypes:Property" xmi:id="_zxAqVclhEeKE2tP5OBlA8w" name="gvp" value="http://www.genesyslab.com/2006/vxml21-extension"/>
+    <systemProperties xmi:type="datatypes:Property" xmi:id="_zxAqVslhEeKE2tP5OBlA8w" name="RetainInputTypeVariableDefaultValue" value="false"/>
+  </gvp:CallflowDiagram>
+  <notation:Diagram xmi:id="_RF4M8YobEeG_nt9_QYQUcg" type="Studio" element="_RF4M8IobEeG_nt9_QYQUcg" name="subcallflow.callflow" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_0VP_0MlhEeKE2tP5OBlA8w" type="1003" element="_0TDncMlhEeKE2tP5OBlA8w">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0VP_0slhEeKE2tP5OBlA8w" type="6003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_0VP_08lhEeKE2tP5OBlA8w" type="6001"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0VP_0clhEeKE2tP5OBlA8w" x="400" y="100"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0aly0MlhEeKE2tP5OBlA8w" type="1004" element="_0afsMMlhEeKE2tP5OBlA8w">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0aly0slhEeKE2tP5OBlA8w" type="6002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_0aly08lhEeKE2tP5OBlA8w" type="4005"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0aly0clhEeKE2tP5OBlA8w" x="400" y="630"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LVwqIWjdEe6wwJi9ak-h8A" type="1030" element="_LVwqKWjdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LVwqImjdEe6wwJi9ak-h8A" type="4056"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LVwqI2jdEe6wwJi9ak-h8A" type="4057"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LVwqJGjdEe6wwJi9ak-h8A" x="380" y="378" width="151"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LVwqJWjdEe6wwJi9ak-h8A" type="1011" element="_LVwqP2jdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LVwqJmjdEe6wwJi9ak-h8A" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LVwqJ2jdEe6wwJi9ak-h8A" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LVwqKGjdEe6wwJi9ak-h8A" x="379" y="294" width="152"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_RF4M8oobEeG_nt9_QYQUcg"/>
+    <edges xmi:type="notation:Connector" xmi:id="_Owz0sWjdEe6wwJi9ak-h8A" type="3001" element="_Owz0sGjdEe6wwJi9ak-h8A" source="_0VP_0MlhEeKE2tP5OBlA8w" target="_LVwqJWjdEe6wwJi9ak-h8A" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Owz0tGjdEe6wwJi9ak-h8A" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Owz0tWjdEe6wwJi9ak-h8A" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Owz0smjdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Owz0s2jdEe6wwJi9ak-h8A" points="[0, 3, 0, -146]$[-1, 147, -1, -2]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ow9lsGjdEe6wwJi9ak-h8A" id="(0.4727272727272727,0.94)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ow9lsWjdEe6wwJi9ak-h8A" id="(0.48026315789473684,0.04)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_O_fw8WjdEe6wwJi9ak-h8A" type="3001" element="_O_fw8GjdEe6wwJi9ak-h8A" source="_LVwqJWjdEe6wwJi9ak-h8A" target="_LVwqIWjdEe6wwJi9ak-h8A" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_O_fw9GjdEe6wwJi9ak-h8A" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_O_fw9WjdEe6wwJi9ak-h8A" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_O_fw8mjdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O_fw82jdEe6wwJi9ak-h8A" points="[5, 0, 0, -59]$[5, 34, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O_fw9mjdEe6wwJi9ak-h8A" id="(0.46710526315789475,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Q9yCkWjdEe6wwJi9ak-h8A" type="3001" element="_Q9yCkGjdEe6wwJi9ak-h8A" source="_LVwqIWjdEe6wwJi9ak-h8A" target="_0aly0MlhEeKE2tP5OBlA8w" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Q9yClGjdEe6wwJi9ak-h8A" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Q9yClWjdEe6wwJi9ak-h8A" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Q9yCkmjdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q9yCk2jdEe6wwJi9ak-h8A" points="[0, 10, -10, -209]$[14, 212, 4, -7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Q9yClmjdEe6wwJi9ak-h8A" id="(0.5033112582781457,0.8)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Q9yCl2jdEe6wwJi9ak-h8A" id="(0.6,0.14)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_RLfHYWjdEe6wwJi9ak-h8A" type="3002" element="_RLfHYGjdEe6wwJi9ak-h8A" source="_LVwqIWjdEe6wwJi9ak-h8A" target="_0aly0MlhEeKE2tP5OBlA8w">
+      <children xmi:type="notation:DecorationNode" xmi:id="_RLfHZWjdEe6wwJi9ak-h8A" type="4075">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RLfHZmjdEe6wwJi9ak-h8A" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:RoutingStyle" xmi:id="_RLfHYmjdEe6wwJi9ak-h8A" roundedBendpointsRadius="10" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_RLfHY2jdEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RLfHZGjdEe6wwJi9ak-h8A" points="[9, 25, -63, -227]$[127, 259, 55, 7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RLfHZ2jdEe6wwJi9ak-h8A" id="(0.019867549668874173,0.5)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

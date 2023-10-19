@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datatypes="http://studio.genesyslab.com/common/datatypes/" xmlns:gvp="http://studio.genesyslab.com/gvp/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://studio.genesyslab.com/common/datatypes/ http://studio.genesyslab.com/common/#//datatypes">
+  <gvp:CallflowDiagram xmi:id="_RF4M8IobEeG_nt9_QYQUcg" name="Counter_Phone" designedUsing="Composer 8.1.561.23" callflowType="Subcallflow">
+    <history>8.1.3</history>
+    <history>8.1.300.01</history>
+    <blocks xmi:type="gvp:EntryBlock" xmi:id="_0TDncMlhEeKE2tP5OBlA8w" name="Entry1" starting="true" category="Entry" applicationRoot="../src/ComposerRoot.vxml">
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fkGjEEe6wwJi9ak-h8A" name="APP_LANGUAGE" value="'en-US'" description="Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fkWjEEe6wwJi9ak-h8A" name="APP_ASR_LANGUAGE" value="'en-US'" description="ASR Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fkmjEEe6wwJi9ak-h8A" name="PREV_APP_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fk2jEEe6wwJi9ak-h8A" name="PREV_APP_ASR_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7flGjEEe6wwJi9ak-h8A" name="GRAMMARFILEDIR" value="'../Resources/Grammars'" description="Grammar File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7flWjEEe6wwJi9ak-h8A" name="VOXFILEDIR" value="'../Resources/Prompts'" description="Audio File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7flmjEEe6wwJi9ak-h8A" name="SCRIPTSDIR" value="'../Scripts'" description="JavaScript Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fl2jEEe6wwJi9ak-h8A" name="EnableReports" value="false" description="Reporting Flag" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fmGjEEe6wwJi9ak-h8A" name="EnableSNMP" value="false" description="Flag for enabling SNMP Traps" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fmWjEEe6wwJi9ak-h8A" name="CallUUID" value="session.connection.uuid" description="Universal ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fmmjEEe6wwJi9ak-h8A" name="GVPSessionID" value="session.genesys.userdata[&quot;GVP-Session-ID&quot;]" description="GVP Session ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fm2jEEe6wwJi9ak-h8A" name="DNIS" value="getDNIS()" description="DNIS associated with Called phone number" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fnGjEEe6wwJi9ak-h8A" name="ANI" value="getANI()" description="ANI associated with the calling party." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fnWjEEe6wwJi9ak-h8A" name="LAST_EVENT_NAME" value="'undefined'" description="Last event or error name" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fnmjEEe6wwJi9ak-h8A" name="LAST_EVENT_MSG" value="'undefined'" description="Last event or error details" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fn2jEEe6wwJi9ak-h8A" name="LAST_EVENT_URL" value="'undefined'" description="URL of the last event." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7foGjEEe6wwJi9ak-h8A" name="LAST_EVENT_ELEMENT" value="'undefined'" description="Element name of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7foWjEEe6wwJi9ak-h8A" name="LAST_EVENT_LINE" value="'undefined'" description="Line number of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fomjEEe6wwJi9ak-h8A" name="EnableFCR" value="true" description="Flag for enabling Full Call Recording" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fo2jEEe6wwJi9ak-h8A" name="COMPOSER_WSSTUBBING" value="'0'" description="Flag to control WebServices Stubbing. '1' - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fpGjEEe6wwJi9ak-h8A" name="USE_LCASE_USERDATAKEY" value="0" description="Flag to control lowerCase lookup in UserData array. 1 - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fpWjEEe6wwJi9ak-h8A" name="OCS_RecordURI" value="getCallflowRecordURI()" description="OCS Record URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fpmjEEe6wwJi9ak-h8A" name="OCS_URI" value="getCallflowOCSURI()" description="OCS URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fp2jEEe6wwJi9ak-h8A" name="OCS_Record" value="getCallflowOCSRecord()" description="OCS Record" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fqGjEEe6wwJi9ak-h8A" name="v_subdialogData" value="{ &#xD;&#xA;//Counter&#xD;&#xA; Counter_Birth: {},&#xD;&#xA; Counter_ID: {},&#xD;&#xA; Counter_Main:{&#xD;&#xA;  GreetingPrompt: '', &#xD;&#xA;  BusinessPrompt: '',&#xD;&#xA;  FinalPrompt: '',&#xD;&#xA; },&#xD;&#xA; Counter_Phone:{},&#xD;&#xA; //DB&#xD;&#xA; DB_VoiceCenter:{&#xD;&#xA;  FlowType:'',&#xD;&#xA;  AISSCode:''&#xD;&#xA; },&#xD;&#xA; //SYS_COM&#xD;&#xA;  &quot;SYS_Input&quot;: {&#xD;&#xA;    &quot;promptSetting&quot;: {&#xD;&#xA;      &quot;promptList&quot;: [],&#xD;&#xA;      &quot;onlyPlayPromt&quot;: &quot;&quot; //1是只播音檔&#xD;&#xA;    },&#xD;&#xA;    &quot;inputSetting&quot;: {&#xD;&#xA;      &quot;inputType&quot;: &quot;&quot;,//data,option&#xD;&#xA;      &quot;inputTypeDetail&quot;: &quot;&quot;,&#xD;&#xA;      &quot;inputLengthList&quot;: [],&#xD;&#xA;      &quot;inputList&quot;: [],//要使用的話inputType要選為data&#xD;&#xA;      &quot;allowNoInput&quot;: &quot;&quot;,&#xD;&#xA;      &quot;keepNoMatchCount&quot;: &quot;1&quot;,&#xD;&#xA;      &quot;keepInputCount&quot;: &quot;1&quot;,&#xD;&#xA;      &quot;foreigner&quot;: &quot;&quot;,&#xD;&#xA;      &quot;phone&quot;: &quot;&quot;,&#xD;&#xA;      &quot;ID&quot;: &quot;&quot;,&#xD;&#xA;      &quot;birthday&quot;: &quot;&quot;,&#xD;&#xA;      &quot;outputNum&quot;: &quot;&quot; &#xD;&#xA;    },&#xD;&#xA;    &quot;errorSetting&quot;: {&#xD;&#xA;      &quot;errorStatue&quot;:&quot;&quot;,&#xD;&#xA;      &quot;noMatchPrompt&quot;: [],&#xD;&#xA;      &quot;noInputPrompt&quot;: [],&#xD;&#xA;      &quot;noMatchCount&quot;: 0,&#xD;&#xA;      &quot;noInputCount&quot;: 0&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;}" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fqWjEEe6wwJi9ak-h8A" name="v_nomatchcount" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fqmjEEe6wwJi9ak-h8A" name="v_phone" value="&quot;&quot;" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fq2jEEe6wwJi9ak-h8A" name="v_outputNum" value="&quot;&quot;" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7frGjEEe6wwJi9ak-h8A" name="v_AI_Phone" value="&quot;&quot;" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7frWjEEe6wwJi9ak-h8A" name="g_reportLog" value="{&#xD;&#xA;&#x9;Reason: 0,&#xD;&#xA;&#x9;Reason_Memo: &quot;&quot;,&#xD;&#xA;&#x9;Qcall_Type: &quot;&quot;&#xD;&#xA;}" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7frmjEEe6wwJi9ak-h8A" name="g_custInfo" value="{&#xD;&#xA;&#x9;&quot;ID&quot;: &quot;&quot;,&#xD;&#xA;&#x9;&quot;phone&quot;: &quot;&quot;,&#xD;&#xA;&#x9;&quot;birth&quot;: &quot;&quot;&#xD;&#xA;}" description="Enter Description" type="Input"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_XI7fr2jEEe6wwJi9ak-h8A" name="g_system" value="{}" description="Enter Description" type="Input"/>
+    </blocks>
+    <blocks xmi:type="gvp:ExitBlock" xmi:id="_q2h8MFkZEe6qr5KVvEEZpQ" name="Exit1" terminating="true" category="Exit" returnMode="true" reason="">
+      <loggingDetails>JSON.stringify(AppState.g_custInfo)</loggingDetails>
+      <returnValues>v_subdialogData</returnValues>
+      <returnValues>g_reportLog</returnValues>
+      <returnValues>g_custInfo</returnValues>
+      <returnValues>g_system</returnValues>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_q2h8MVkZEe6qr5KVvEEZpQ" name="ask_phoneNum" category="Subdialog" uri="workspace:///Fubon_Counter/Callflows/SYS_Input.callflow">
+      <loggingDetails>'------------------------------------------------------------------------'</loggingDetails>
+      <loggingDetails>JSON.stringify(AppState.v_subdialogData)</loggingDetails>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_vFhdAGNdEe6Gus1XG-D5IA" name="g_custInfo" value="g_custInfo" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_vFhdAWNdEe6Gus1XG-D5IA" name="g_reportLog" value="g_reportLog" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_vFhdAmNdEe6Gus1XG-D5IA" name="g_subdialogData" value="v_subdialogData" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_vFhdA2NdEe6Gus1XG-D5IA" name="g_system" value="g_system" description="Enter Description" type="inout"/>
+    </blocks>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_q2h8NlkZEe6qr5KVvEEZpQ" name="Branching_type" category="Branching">
+      <loggingDetails>'電話號碼: '+AppState.v_phone</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_UBQ8oF2jEe67loq3A_eGFw" name="not09" expression="AppState.v_phone.slice(0, 2) != &quot;09&quot;;" postAction=""/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_q2h8O1kZEe6qr5KVvEEZpQ" name="ask_reEnter" category="Subdialog" uri="workspace:///Fubon_Counter/Callflows/SYS_Input.callflow">
+      <loggingDetails>AppState.v_subdialogData.promptSetting.promptList[0].value</loggingDetails>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_Qoso4F2kEe67loq3A_eGFw" name="subdialogData" value="v_subdialogData" description="Enter Description" type="inout"/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_q2ijQFkZEe6qr5KVvEEZpQ" name="sub_confirm" category="Subdialog" uri="workspace:///Fubon_Counter/Callflows/SYS_Input.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_zpZQ0GNdEe6Gus1XG-D5IA" name="g_custInfo" value="g_custInfo" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_zpZQ0WNdEe6Gus1XG-D5IA" name="g_reportLog" value="g_reportLog" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_zpZQ0mNdEe6Gus1XG-D5IA" name="g_subdialogData" value="v_subdialogData" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_zpZQ02NdEe6Gus1XG-D5IA" name="g_system" value="g_system" description="Enter Description" type="inout"/>
+    </blocks>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_q2ijRlkZEe6qr5KVvEEZpQ" name="ECMA_wrong_format" category="ECMA Script" script="try {&#xD;&#xA;&#x9;// your code&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;AppState.g_reportLog[&quot;Reason_Memo&quot;] = &quot;[自助櫃檯]-Q2確認手機(有顯號)-nomatch&quot;;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;AppState.v_nomatchcount -= 1;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].promptList = [{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_07.wav&quot;, &quot;interruptible&quot;: 1}];&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;].errorStatue = &quot;&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;].noMatchCount = AppState.v_nomatchcount;&#xD;&#xA;&#x9;&#xD;&#xA;&#xD;&#xA;} catch (error) {&#xD;&#xA;&#x9;// error handling code&#xD;&#xA;}"/>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_q2ijR1kZEe6qr5KVvEEZpQ" name="ECMA_confirm" category="ECMA Script" script="try {&#xD;&#xA;&#x9;// your code&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;AppState.g_reportLog[&quot;Reason_Memo&quot;] = &quot;[自助櫃檯]-Q2確認手機&quot;;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].promptList = [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_06.wav&quot;, &quot;interruptible&quot;: 0},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Phone&quot;, &quot;value&quot;: AppState.v_phone, &quot;interruptible&quot;: 0},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_07.wav&quot;, &quot;interruptible&quot;: 1}];&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].inputType = &quot;option&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].inputTypeDetail = &quot;digits&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].inputLengthList = [&quot;1&quot;, &quot;1&quot;];&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].inputList = [&quot;1&quot;, &quot;2&quot;];&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;].errorStatue = &quot;&quot;;&#xD;&#xA;&#x9;&#xD;&#xA;} catch (error) {&#xD;&#xA;&#x9;// error handling &#xD;&#xA;}"/>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_q2ijSFkZEe6qr5KVvEEZpQ" name="Branching_back" condition="" category="Branching">
+      <loggingDetails>AppState.g_custInfo[&quot;phone&quot;]</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_WsU0sF2jEe67loq3A_eGFw" name="back" expression="AppState.v_outputNum === &quot;2&quot;;"/>
+    </blocks>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_q2ijSlkZEe6qr5KVvEEZpQ" name="ECMA_Input" category="ECMA Script" script="try {&#xD;&#xA;&#xD;&#xA;&#x9;AppState.g_reportLog[&quot;Reason_Memo&quot;] = &quot;[自助櫃檯]-Q2輸入手機&quot;;&#xD;&#xA;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].promptList = [{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_05.wav&quot;, &quot;interruptible&quot;: 1}];&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].onlyPlayPrompt = &quot;0&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;] =  { &quot;inputType&quot;: &quot;data&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;    &quot;inputTypeDetail&quot;: &quot;phone&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputLengthList&quot;: [&quot;10&quot;, &quot;10&quot;],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputList&quot;: [],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;allowNoInput&quot;: &quot;0&quot;, //1為允許，並回傳&quot;noinput&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepNoMatchCount&quot;: &quot;1&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepNoInputCount&quot;: &quot;1&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;foreigner&quot;:&quot;0&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;phone&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;ID&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;birthday&quot;: &quot;&quot; };&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;] =  {&#x9;&quot;errorStatue&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchPrompt&quot;: [  {&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_07.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_08.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputPrompt&quot;: [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_02.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_03.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchCount&quot;: 2,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputCount&quot;: 2 };      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;} catch (error) {&#xD;&#xA;&#x9;// error handling code&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_6Ee4oFuAEe6yI_PH36Y4bA" name="Assign_phoneNum" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_CeV_wGDVEe6wKrOhd3aMEg" Key="v_phone" Value="AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].outputNum"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_CeV_wWDVEe6wKrOhd3aMEg" Key="v_nomatchcount" Value="AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;].nomatchCount"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_w1GJNVuGEe6yI_PH36Y4bA" name="Assign_output" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_O71d0FuIEe6yI_PH36Y4bA" Key="v_outputNum" Value="AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].outputNum"/>
+    </blocks>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_-bEJ4F2aEe67loq3A_eGFw" name="Bra_initPhoneNum" category="Branching">
+      <loggingDetails>'電話號碼: '+AppState.v_phone</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_s6jJYF2uEe67loq3A_eGFw" name="yes" expression="AppState.v_AI_Phone != &quot;&quot;;" postAction=""/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_Ntw35F2bEe67loq3A_eGFw" name="sub_confirml3" category="Subdialog" uri="workspace:///Fubon_Counter/Callflows/SYS_Input.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_jqaEkGNdEe6Gus1XG-D5IA" name="g_custInfo" value="g_custInfo" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_jqaEkWNdEe6Gus1XG-D5IA" name="g_reportLog" value="g_reportLog" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_jqaEkmNdEe6Gus1XG-D5IA" name="g_subdialogData" value="v_subdialogData" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_jqaEk2NdEe6Gus1XG-D5IA" name="g_system" value="g_system" description="Enter Description" type="inout"/>
+    </blocks>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_Ntw35l2bEe67loq3A_eGFw" name="ECMA_AI_Phone" category="ECMA Script" script="try {&#xD;&#xA;&#xD;&#xA;&#x9;AppState.g_reportLog[&quot;Reason_Memo&quot;] = &quot;[自助櫃檯]-Q2確認手機(有主檔)&quot;;&#xD;&#xA;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].promptList = [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_01.wav&quot;, &quot;interruptible&quot;: 0}, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Phone&quot;, &quot;value&quot;: AppState.v_AI_Phone, &quot;interruptible&quot;: 0}, //0可中斷&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_02.wav&quot;, &quot;interruptible&quot;: 1}];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].onlyPlayPrompt = &quot;0&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;] =  { &quot;inputType&quot;: &quot;option&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;    &quot;inputTypeDetail&quot;: &quot;str&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputLengthList&quot;: [&quot;1&quot;, &quot;1&quot;],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputList&quot;: [&quot;1&quot;, &quot;2&quot;],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;allowNoInput&quot;: &quot;0&quot;, //1為允許，並回傳&quot;noinput&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepNoMatchCount&quot;: &quot;1&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepInputCount&quot;: &quot;1&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;foreigner&quot;: &quot;0&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;phone&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;ID&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;birthday&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;outputNum&quot;: &quot;&quot; };&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;] =  {&#x9;&quot;errorStatue&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchPrompt&quot;: [  {&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_07.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_08.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputPrompt&quot;: [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_02.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_03.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchCount&quot;: 2,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputCount&quot;: 2 };      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;} catch (error) {&#xD;&#xA;&#x9;// error handling code&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_vi0b6F2dEe67loq3A_eGFw" name="sub_confirm2" category="Subdialog" uri="workspace:///Fubon_Counter/Callflows/SYS_Input.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_oaUwUGNdEe6Gus1XG-D5IA" name="g_custInfo" value="g_custInfo" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_oaUwUWNdEe6Gus1XG-D5IA" name="g_reportLog" value="g_reportLog" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_oaUwUmNdEe6Gus1XG-D5IA" name="g_subdialogData" value="v_subdialogData" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_oaUwU2NdEe6Gus1XG-D5IA" name="g_system" value="g_system" description="Enter Description" type="inout"/>
+    </blocks>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_vi0b6l2dEe67loq3A_eGFw" name="ECMA_ANI" category="ECMA Script" script="try {&#xD;&#xA;&#xD;&#xA;&#x9;AppState.g_reportLog[&quot;Reason_Memo&quot;] = &quot;[自助櫃檯]-Q2確認手機(有顯號)&quot;;&#xD;&#xA;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].promptList = [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_03.wav&quot;, &quot;interruptible&quot;: 0},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Phone&quot;, &quot;value&quot;: AppState.ANI, &quot;interruptible&quot;: 0},&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_Counter_Phone_02.wav&quot;, &quot;interruptible&quot;: 1}];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;promptSetting&quot;].onlyPlayPrompt = &quot;0&quot;;&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;] =  { &quot;inputType&quot;: &quot;option&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;    &quot;inputTypeDetail&quot;: &quot;str&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputLengthList&quot;: [&quot;1&quot;, &quot;1&quot;],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;inputList&quot;: [&quot;1&quot;, &quot;2&quot;],&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;allowNoInput&quot;: &quot;0&quot;, //1為允許，並回傳&quot;noinput&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepNoMatchCount&quot;: &quot;1&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;keepInputCount&quot;: &quot;1&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;foreigner&quot;: &quot;0&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;phone&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;ID&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;birthday&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;outputNum&quot;: &quot;&quot; };&#xD;&#xA;&#x9;AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;errorSetting&quot;] =  {&#x9;&quot;errorStatue&quot;: &quot;&quot;,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchPrompt&quot;: [  {&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_07.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_08.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputPrompt&quot;: [&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_02.wav&quot;, &quot;interruptible&quot;: 1},&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;type&quot;: &quot;Audio&quot;, &quot;value&quot;: &quot;Rec8_SYS_InputError_03.wav&quot;, &quot;interruptible&quot;: 1} ],&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noMatchCount&quot;: 2,&#xD;&#xA;      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;noInputCount&quot;: 2 };      &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;} catch (error) {&#xD;&#xA;&#x9;// error handling code&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_6MqvdV2dEe67loq3A_eGFw" name="Bra_check_ANI" category="Branching">
+      <loggingDetails>'主叫碼: '+ AppState.ANI</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_CWpZYF3BEe67loq3A_eGFw" name="not09" expression="AppState.ANI.slice(0, 2) != &quot;09&quot;;" postAction=""/>
+    </blocks>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_figvFV2fEe67loq3A_eGFw" name="Bra_confirm" category="Branching">
+      <loggingDetails>'使用者中西式選擇: '+AppState.v_ans</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_Qe_IsF2jEe67loq3A_eGFw" name="confirm" expression="AppState.v_outputNum === &quot;1&quot;;"/>
+    </blocks>
+    <blocks xmi:type="gvp:ExitBlock" xmi:id="_r9qoNV2fEe67loq3A_eGFw" name="Exit2" terminating="true" category="Exit" returnMode="true" reason="">
+      <returnValues>v_subdialogData</returnValues>
+      <returnValues>g_reportLog</returnValues>
+      <returnValues>g_custInfo</returnValues>
+      <returnValues>g_system</returnValues>
+    </blocks>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_Myf6xV2hEe67loq3A_eGFw" name="Bra_confirm1" category="Branching">
+      <loggingDetails>'使用者確認: '+ AppState.v_outputNum</loggingDetails>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_XaNcIF2oEe67loq3A_eGFw" name="notconfirm" expression="AppState.v_outputNum === &quot;2&quot;;"/>
+    </blocks>
+    <blocks xmi:type="gvp:ExitBlock" xmi:id="_ZXaM1F2hEe67loq3A_eGFw" name="Exit3" terminating="true" category="Exit" returnMode="true">
+      <returnValues>v_subdialogData</returnValues>
+      <returnValues>g_reportLog</returnValues>
+      <returnValues>g_custInfo</returnValues>
+      <returnValues>g_system</returnValues>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_n4WRRV2iEe67loq3A_eGFw" name="Assign_output2" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_Ji118F2jEe67loq3A_eGFw" Key="v_outputNum" Value="AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].outputNum"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_fIv1JF2oEe67loq3A_eGFw" name="Assign_output3" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_jwHo4F2oEe67loq3A_eGFw" Key="v_outputNum" Value="AppState.v_subdialogData[&quot;SYS_Input&quot;][&quot;inputSetting&quot;].outputNum"/>
+    </blocks>
+    <blocks xmi:type="gvp:LogBlock" xmi:id="_bjdOwGNhEe6Gus1XG-D5IA" name="Log1" condition="" category="Log">
+      <loggingDetails>'進鳳啦!!!!!'+JSON.stringify(AppState.v_subdialogData)</loggingDetails>
+    </blocks>
+    <blocks xmi:type="gvp:EcmaScriptBlock" xmi:id="_0iXt4GQmEe6MCayOJg4GwQ" name="update_custInfo" category="ECMA Script" script="AppState.g_custInfo.phone = AppState.v_phone;"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_q2jKYFkZEe6qr5KVvEEZpQ" name="not09" fromBlock="_q2h8NlkZEe6qr5KVvEEZpQ" toBlock="_q2ijRlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_q2jKaFkZEe6qr5KVvEEZpQ" fromBlock="_q2ijRlkZEe6qr5KVvEEZpQ" toBlock="_q2h8O1kZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_q2jxYFkZEe6qr5KVvEEZpQ" fromBlock="_q2ijR1kZEe6qr5KVvEEZpQ" toBlock="_q2ijQFkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_q2jxeFkZEe6qr5KVvEEZpQ" fromBlock="_q2ijSlkZEe6qr5KVvEEZpQ" toBlock="_q2h8MVkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_hc5BYFkbEe6qr5KVvEEZpQ" name="default" fromBlock="_q2h8NlkZEe6qr5KVvEEZpQ" toBlock="_q2ijR1kZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_sWdroFkeEe6qr5KVvEEZpQ" name="back" fromBlock="_q2ijSFkZEe6qr5KVvEEZpQ" toBlock="_q2ijSlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_6v1iwFuAEe6yI_PH36Y4bA" fromBlock="_q2h8MVkZEe6qr5KVvEEZpQ" toBlock="_6Ee4oFuAEe6yI_PH36Y4bA"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_7A8g4FuAEe6yI_PH36Y4bA" fromBlock="_6Ee4oFuAEe6yI_PH36Y4bA" toBlock="_q2h8NlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1Zv1kFuFEe6yI_PH36Y4bA" fromBlock="_q2h8O1kZEe6qr5KVvEEZpQ" toBlock="_6Ee4oFuAEe6yI_PH36Y4bA"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1ev04FuGEe6yI_PH36Y4bA" fromBlock="_q2ijQFkZEe6qr5KVvEEZpQ" toBlock="_w1GJNVuGEe6yI_PH36Y4bA"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1tuFAFuGEe6yI_PH36Y4bA" fromBlock="_w1GJNVuGEe6yI_PH36Y4bA" toBlock="_q2ijSFkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_RG0eYF2bEe67loq3A_eGFw" name="yes" fromBlock="_-bEJ4F2aEe67loq3A_eGFw" toBlock="_Ntw35l2bEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_a2IcUF2bEe67loq3A_eGFw" fromBlock="_Ntw35l2bEe67loq3A_eGFw" toBlock="_Ntw35F2bEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_vi1C8F2dEe67loq3A_eGFw" fromBlock="_vi0b6l2dEe67loq3A_eGFw" toBlock="_vi0b6F2dEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_IleoEF2eEe67loq3A_eGFw" name="default" fromBlock="_-bEJ4F2aEe67loq3A_eGFw" toBlock="_6MqvdV2dEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_4KLd0F2eEe67loq3A_eGFw" name="default" fromBlock="_6MqvdV2dEe67loq3A_eGFw" toBlock="_vi0b6l2dEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_tlQ4IF2fEe67loq3A_eGFw" name="confirm" fromBlock="_figvFV2fEe67loq3A_eGFw" toBlock="_r9qoNV2fEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_v5aFAF2fEe67loq3A_eGFw" name="default" fromBlock="_figvFV2fEe67loq3A_eGFw" toBlock="_q2ijSlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="__HY1oF2gEe67loq3A_eGFw" name="not09" fromBlock="_6MqvdV2dEe67loq3A_eGFw" toBlock="_q2ijSlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_WlgF4F2hEe67loq3A_eGFw" name="notconfirm" fromBlock="_Myf6xV2hEe67loq3A_eGFw" toBlock="_q2ijSlkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_q6rPQF2hEe67loq3A_eGFw" name="default" fromBlock="_Myf6xV2hEe67loq3A_eGFw" toBlock="_ZXaM1F2hEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_pcSwQF2iEe67loq3A_eGFw" fromBlock="_Ntw35F2bEe67loq3A_eGFw" toBlock="_n4WRRV2iEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1-fskF2iEe67loq3A_eGFw" fromBlock="_n4WRRV2iEe67loq3A_eGFw" toBlock="_figvFV2fEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_f9SQcF2oEe67loq3A_eGFw" fromBlock="_vi0b6F2dEe67loq3A_eGFw" toBlock="_fIv1JF2oEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_oCNJIF2oEe67loq3A_eGFw" fromBlock="_fIv1JF2oEe67loq3A_eGFw" toBlock="_Myf6xV2hEe67loq3A_eGFw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_nrKncGNhEe6Gus1XG-D5IA" fromBlock="_0TDncMlhEeKE2tP5OBlA8w" toBlock="_bjdOwGNhEe6Gus1XG-D5IA"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1YgrsGQmEe6MCayOJg4GwQ" name="default" fromBlock="_q2ijSFkZEe6qr5KVvEEZpQ" toBlock="_0iXt4GQmEe6MCayOJg4GwQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_1lTKgGQmEe6MCayOJg4GwQ" fromBlock="_0iXt4GQmEe6MCayOJg4GwQ" toBlock="_q2h8MFkZEe6qr5KVvEEZpQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_D2WJgGihEe6wwJi9ak-h8A" fromBlock="_bjdOwGNhEe6Gus1XG-D5IA" toBlock="_-bEJ4F2aEe67loq3A_eGFw"/>
+    <namespaces xmi:type="datatypes:Property" xmi:id="_zxAqVclhEeKE2tP5OBlA8w" name="gvp" value="http://www.genesyslab.com/2006/vxml21-extension"/>
+    <systemProperties xmi:type="datatypes:Property" xmi:id="_zxAqVslhEeKE2tP5OBlA8w" name="RetainInputTypeVariableDefaultValue" value="false"/>
+  </gvp:CallflowDiagram>
+  <notation:Diagram xmi:id="_RF4M8YobEeG_nt9_QYQUcg" type="Studio" element="_RF4M8IobEeG_nt9_QYQUcg" name="subcallflow.callflow" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_wCmrAF2kEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="[自助櫃檯]-Q2輸入手機" fillColor="13420443" transparency="0" lineColor="12560536" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_wCogMF2kEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_wCogMV2kEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_wCmrAV2kEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_wCmrAl2kEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wCmrA12kEe67loq3A_eGFw" x="527" y="251" width="188" height="51"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0VP_0MlhEeKE2tP5OBlA8w" type="1003" element="_0TDncMlhEeKE2tP5OBlA8w">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0VP_0slhEeKE2tP5OBlA8w" type="6003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_0VP_08lhEeKE2tP5OBlA8w" type="6001"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0VP_0clhEeKE2tP5OBlA8w" x="400" y="-672"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2guEFkZEe6qr5KVvEEZpQ" type="1004" element="_q2h8MFkZEe6qr5KVvEEZpQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2guEVkZEe6qr5KVvEEZpQ" type="6002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2guElkZEe6qr5KVvEEZpQ" type="4005"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2guE1kZEe6qr5KVvEEZpQ" x="501" y="1176"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2guFFkZEe6qr5KVvEEZpQ" type="1009" element="_q2h8MVkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2guFVkZEe6qr5KVvEEZpQ" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2guFlkZEe6qr5KVvEEZpQ" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2guF1kZEe6qr5KVvEEZpQ" x="391" y="336" width="128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVIFkZEe6qr5KVvEEZpQ" type="1012" element="_q2h8NlkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVIVkZEe6qr5KVvEEZpQ" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVIlkZEe6qr5KVvEEZpQ" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVI1kZEe6qr5KVvEEZpQ" x="382" y="504" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVKFkZEe6qr5KVvEEZpQ" type="1009" element="_q2h8O1kZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVKVkZEe6qr5KVvEEZpQ" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVKlkZEe6qr5KVvEEZpQ" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVK1kZEe6qr5KVvEEZpQ" x="291" y="714"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVLFkZEe6qr5KVvEEZpQ" type="1009" element="_q2ijQFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVLVkZEe6qr5KVvEEZpQ" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVLlkZEe6qr5KVvEEZpQ" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVL1kZEe6qr5KVvEEZpQ" x="501" y="714"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVNFkZEe6qr5KVvEEZpQ" type="2013" element="_q2ijRlkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVNVkZEe6qr5KVvEEZpQ" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVNlkZEe6qr5KVvEEZpQ" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVN1kZEe6qr5KVvEEZpQ" x="266" y="630" width="160"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVOFkZEe6qr5KVvEEZpQ" type="2013" element="_q2ijR1kZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVOVkZEe6qr5KVvEEZpQ" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVOlkZEe6qr5KVvEEZpQ" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVO1kZEe6qr5KVvEEZpQ" x="494" y="630" width="124"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVPFkZEe6qr5KVvEEZpQ" type="1012" element="_q2ijSFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVPVkZEe6qr5KVvEEZpQ" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVPlkZEe6qr5KVvEEZpQ" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVP1kZEe6qr5KVvEEZpQ" x="483" y="882" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_q2hVQFkZEe6qr5KVvEEZpQ" type="2013" element="_q2ijSlkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVQVkZEe6qr5KVvEEZpQ" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2hVQlkZEe6qr5KVvEEZpQ" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2hVQ1kZEe6qr5KVvEEZpQ" x="391" y="252" width="128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_6EsUAFuAEe6yI_PH36Y4bA" type="1011" element="_6Ee4oFuAEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_6EsUAluAEe6yI_PH36Y4bA" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_6EsUA1uAEe6yI_PH36Y4bA" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6EsUAVuAEe6yI_PH36Y4bA" x="386" y="420" width="137"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_w1GJMVuGEe6yI_PH36Y4bA" type="1011" element="_w1GJNVuGEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_w1GJMluGEe6yI_PH36Y4bA" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_w1GJM1uGEe6yI_PH36Y4bA" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w1GJNFuGEe6yI_PH36Y4bA" x="487" y="798" width="137"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_-bDi0F2aEe67loq3A_eGFw" type="1012" element="_-bEJ4F2aEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-bDi0V2aEe67loq3A_eGFw" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_-bDi0l2aEe67loq3A_eGFw" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-bDi012aEe67loq3A_eGFw" x="382" y="-336" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_NtwQ0F2bEe67loq3A_eGFw" type="1009" element="_Ntw35F2bEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NtwQ0V2bEe67loq3A_eGFw" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_NtwQ0l2bEe67loq3A_eGFw" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NtwQ012bEe67loq3A_eGFw" x="258" y="-155" width="128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Ntw34F2bEe67loq3A_eGFw" type="2013" element="_Ntw35l2bEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Ntw34V2bEe67loq3A_eGFw" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Ntw34l2bEe67loq3A_eGFw" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ntw3412bEe67loq3A_eGFw" x="260" y="-239" width="123"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_vi0b4F2dEe67loq3A_eGFw" type="1009" element="_vi0b6F2dEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_vi0b4V2dEe67loq3A_eGFw" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_vi0b4l2dEe67loq3A_eGFw" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vi0b412dEe67loq3A_eGFw" x="621" y="-71" width="128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_vi0b5F2dEe67loq3A_eGFw" type="2013" element="_vi0b6l2dEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_vi0b5V2dEe67loq3A_eGFw" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_vi0b5l2dEe67loq3A_eGFw" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vi0b512dEe67loq3A_eGFw" x="623" y="-155" width="123"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_6MqvcV2dEe67loq3A_eGFw" type="1012" element="_6MqvdV2dEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_6Mqvcl2dEe67loq3A_eGFw" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_6Mqvc12dEe67loq3A_eGFw" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6MqvdF2dEe67loq3A_eGFw" x="518" y="-239" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_figvEV2fEe67loq3A_eGFw" type="1012" element="_figvFV2fEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_figvEl2fEe67loq3A_eGFw" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_figvE12fEe67loq3A_eGFw" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_figvFF2fEe67loq3A_eGFw" x="248" y="19" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_r9qoMV2fEe67loq3A_eGFw" type="1004" element="_r9qoNV2fEe67loq3A_eGFw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_r9qoMl2fEe67loq3A_eGFw" type="6002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r9qoM12fEe67loq3A_eGFw" type="4005"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r9qoNF2fEe67loq3A_eGFw" x="84" y="103"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Myf6wV2hEe67loq3A_eGFw" type="1012" element="_Myf6xV2hEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Myf6wl2hEe67loq3A_eGFw" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Myf6w12hEe67loq3A_eGFw" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Myf6xF2hEe67loq3A_eGFw" x="612" y="103" width="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ZXaM0F2hEe67loq3A_eGFw" type="1004" element="_ZXaM1F2hEe67loq3A_eGFw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZXaM0V2hEe67loq3A_eGFw" type="6002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZXaM0l2hEe67loq3A_eGFw" type="4005"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZXaM012hEe67loq3A_eGFw" x="793" y="252"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_8mTjgF2hEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="[自助櫃檯]-Q2確認手機(有主檔)" fillColor="13420443" transparency="0" lineColor="12560536" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_8mWm0F2hEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_8mWm0V2hEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_8mTjgV2hEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_8mTjgl2hEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8mTjg12hEe67loq3A_eGFw" x="84" y="-339"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_n4WRQV2iEe67loq3A_eGFw" type="1011" element="_n4WRRV2iEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_n4WRQl2iEe67loq3A_eGFw" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_n4WRQ12iEe67loq3A_eGFw" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n4WRRF2iEe67loq3A_eGFw" x="253" y="-71" width="137"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_i20mMF2kEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="[自助櫃檯]-Q2確認手機(有顯號)" fillColor="13420443" transparency="0" lineColor="12560536" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_i20mMV2kEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_i20mMl2kEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_i20mM12kEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_i20mNF2kEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i20mNV2kEe67loq3A_eGFw" x="714" y="-242"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_2loTIF2kEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="[自助櫃檯]-Q2確認手機" fillColor="13420443" transparency="0" lineColor="12560536" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_2lxdEF2kEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_2lxdEV2kEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_2loTIV2kEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_2loTIl2kEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2loTI12kEe67loq3A_eGFw" x="636" y="627"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_gIwWEF2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="設定音檔、INPUT" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_gIzZYF2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_gIzZYV2nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_gIwWEV2nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_gIwWEl2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gIwWE12nEe67loq3A_eGFw" x="84" y="-234" width="145" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_xpMG8V2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="設定音檔、INPUT" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_xpMG8l2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_xpMG812nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_xpMG9F2nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_xpMG9V2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xpMG9l2nEe67loq3A_eGFw" x="228" y="260" width="145" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_1fQZkF2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="設定音檔、INPUT" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_1fQZkV2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_1fQZkl2nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_1fQZk12nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_1fQZlF2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1fQZlV2nEe67loq3A_eGFw" x="148" y="625" width="106" height="60"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_5ucW0V2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="設定音檔、INPUT" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_5ucW0l2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_5ucW012nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_5ucW1F2nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_5ucW1V2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5ucW1l2nEe67loq3A_eGFw" x="758" y="-150" width="145" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_63RAEF2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="播放音檔" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_63RAEV2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_63RAEl2nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_63RAE12nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_63RAFF2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_63RAFV2nEe67loq3A_eGFw" x="144" y="-150" width="85" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="__gHagV2nEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="播放音檔" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="__gHagl2nEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="__gHag12nEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="__gHahF2nEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="__gHahV2nEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__gHahl2nEe67loq3A_eGFw" x="756" y="-66" width="85" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_AeWkYV2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="播放音檔" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_AeWkYl2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_AeWkY12oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_AeWkZF2oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_AeWkZV2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AeWkZl2oEe67loq3A_eGFw" x="282" y="341" width="85" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_CM-pYV2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="播放音檔" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_CM-pYl2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_CM-pY12oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_CM-pZF2oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_CM-pZV2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CM-pZl2oEe67loq3A_eGFw" x="188" y="719" width="85" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_D49qEV2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="播放音檔" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_D49qEl2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_D49qE12oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_D49qFF2oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_D49qFV2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D49qFl2oEe67loq3A_eGFw" x="636" y="719" width="85" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GvmgAF2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="取得輸入值" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_GvmgAV2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_GvmgAl2oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_GvmgA12oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_GvmgBF2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GvmgBV2oEe67loq3A_eGFw" x="116" y="-66" width="113" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_OCkXUV2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="取得輸入值" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_OCkXUl2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_OCkXU12oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_OCkXVF2oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_OCkXVV2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCkXVl2oEe67loq3A_eGFw" x="254" y="425" width="113" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_R5LcgF2oEe67loq3A_eGFw" type="Note" fontName="Microsoft JhengHei UI" description="取得輸入值" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_R5LcgV2oEe67loq3A_eGFw" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:BasicDecorationNode" xmi:id="_R5Lcgl2oEe67loq3A_eGFw" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:TextStyle" xmi:id="_R5Lcg12oEe67loq3A_eGFw"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_R5LchF2oEe67loq3A_eGFw"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R5LchV2oEe67loq3A_eGFw" x="636" y="803" width="113" height="39"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_fIv1IF2oEe67loq3A_eGFw" type="1011" element="_fIv1JF2oEe67loq3A_eGFw" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fIv1IV2oEe67loq3A_eGFw" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_fIv1Il2oEe67loq3A_eGFw" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIv1I12oEe67loq3A_eGFw" x="616" y="19" width="137"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_bjiHQGNhEe6Gus1XG-D5IA" type="1006" element="_bjdOwGNhEe6Gus1XG-D5IA" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_bjiHQmNhEe6Gus1XG-D5IA" type="4008"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_bjiHQ2NhEe6Gus1XG-D5IA" type="4009"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bjiHQWNhEe6Gus1XG-D5IA" x="400" y="-546"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0iaKIGQmEe6MCayOJg4GwQ" type="2013" element="_0iXt4GQmEe6MCayOJg4GwQ" fontName="Microsoft JhengHei UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0iaKImQmEe6MCayOJg4GwQ" type="8025"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_0iaKI2QmEe6MCayOJg4GwQ" type="8026"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0iaKIWQmEe6MCayOJg4GwQ" x="478" y="1008" width="146"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_RF4M8oobEeG_nt9_QYQUcg"/>
+    <edges xmi:type="notation:Connector" xmi:id="_q2jKYVkZEe6qr5KVvEEZpQ" type="3001" element="_q2jKYFkZEe6qr5KVvEEZpQ" source="_q2hVIFkZEe6qr5KVvEEZpQ" target="_q2hVNFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2jKYlkZEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q2jKY1kZEe6qr5KVvEEZpQ" x="1" y="51"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_q2jKZFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q2jKZVkZEe6qr5KVvEEZpQ" points="[-25, 25, 84, -101]$[-25, 59, 84, -67]$[-109, 59, 0, -67]$[-109, 101, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jKZlkZEe6qr5KVvEEZpQ" id="(0.2945205479452055,0.86)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jKZ1kZEe6qr5KVvEEZpQ" id="(0.2818181818181818,0.2)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_q2jKaVkZEe6qr5KVvEEZpQ" type="3001" element="_q2jKaFkZEe6qr5KVvEEZpQ" source="_q2hVNFkZEe6qr5KVvEEZpQ" target="_q2hVKFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2jKalkZEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q2jKa1kZEe6qr5KVvEEZpQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_q2jKbFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q2jKbVkZEe6qr5KVvEEZpQ" points="[0, 3, 0, -34]$[0, 37, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jKblkZEe6qr5KVvEEZpQ" id="(0.4727272727272727,0.94)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jKb1kZEe6qr5KVvEEZpQ" id="(0.4727272727272727,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_q2jxYVkZEe6qr5KVvEEZpQ" type="3001" element="_q2jxYFkZEe6qr5KVvEEZpQ" source="_q2hVOFkZEe6qr5KVvEEZpQ" target="_q2hVLFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2jxYlkZEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q2jxY1kZEe6qr5KVvEEZpQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_q2jxZFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q2jxZVkZEe6qr5KVvEEZpQ" points="[1, 0, 0, -34]$[1, 34, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jxZlkZEe6qr5KVvEEZpQ" id="(0.44545454545454544,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jxZ1kZEe6qr5KVvEEZpQ" id="(0.45454545454545453,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_q2jxeVkZEe6qr5KVvEEZpQ" type="3001" element="_q2jxeFkZEe6qr5KVvEEZpQ" source="_q2hVQFkZEe6qr5KVvEEZpQ" target="_q2guFFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2jxelkZEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q2jxe1kZEe6qr5KVvEEZpQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_q2jxfFkZEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q2jxfVkZEe6qr5KVvEEZpQ" points="[0, 25, -20, -59]$[0, 42, -20, -42]$[20, 42, 0, -42]$[20, 59, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q2jxflkZEe6qr5KVvEEZpQ" id="(0.5181818181818182,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_hc5BYVkbEe6qr5KVvEEZpQ" type="3001" element="_hc5BYFkbEe6qr5KVvEEZpQ" source="_q2hVIFkZEe6qr5KVvEEZpQ" target="_q2hVOFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_hc5BZFkbEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_hc5BZVkbEe6qr5KVvEEZpQ" x="3" y="-41"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_hc5BYlkbEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hc5BY1kbEe6qr5KVvEEZpQ" points="[24, 25, -38, -101]$[24, 59, -38, -67]$[62, 59, 0, -67]$[62, 101, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hc5BZlkbEe6qr5KVvEEZpQ" id="(0.7054794520547946,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hc5BZ1kbEe6qr5KVvEEZpQ" id="(0.6545454545454545,0.08)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_sWdroVkeEe6qr5KVvEEZpQ" type="3001" element="_sWdroFkeEe6qr5KVvEEZpQ" source="_q2hVPFkZEe6qr5KVvEEZpQ" target="_q2hVQFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_sWdrpFkeEe6qr5KVvEEZpQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sWdrpVkeEe6qr5KVvEEZpQ" x="4" y="8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_sWdrolkeEe6qr5KVvEEZpQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sWdro1keEe6qr5KVvEEZpQ" points="[-25, 25, 76, 655]$[-25, 59, 76, 689]$[-448, 59, -347, 689]$[-448, -688, -347, -58]$[-101, -688, 0, -58]$[-101, -655, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sWdrplkeEe6qr5KVvEEZpQ" id="(0.3287671232876712,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sWdrp1keEe6qr5KVvEEZpQ" id="(0.16363636363636364,0.32)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_6v1iwVuAEe6yI_PH36Y4bA" type="3001" element="_6v1iwFuAEe6yI_PH36Y4bA" source="_q2guFFkZEe6qr5KVvEEZpQ" target="_6EsUAFuAEe6yI_PH36Y4bA" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_6v1ixFuAEe6yI_PH36Y4bA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6v1ixVuAEe6yI_PH36Y4bA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_6v1iwluAEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6v1iw1uAEe6yI_PH36Y4bA" points="[4, 3, 0, -34]$[4, 37, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6v3_AFuAEe6yI_PH36Y4bA" id="(0.46875,0.94)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6v3_AVuAEe6yI_PH36Y4bA" id="(0.5,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_7A8g4VuAEe6yI_PH36Y4bA" type="3001" element="_7A8g4FuAEe6yI_PH36Y4bA" source="_6EsUAFuAEe6yI_PH36Y4bA" target="_q2hVIFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7A8g5FuAEe6yI_PH36Y4bA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7A8g5VuAEe6yI_PH36Y4bA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_7A8g4luAEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7A8g41uAEe6yI_PH36Y4bA" points="[4, 9, 0, -34]$[4, 43, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7A9vAFuAEe6yI_PH36Y4bA" id="(0.5,0.82)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7A9vAVuAEe6yI_PH36Y4bA" id="(0.5273972602739726,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1ZwcoFuFEe6yI_PH36Y4bA" type="3001" element="_1Zv1kFuFEe6yI_PH36Y4bA" source="_q2hVKFkZEe6qr5KVvEEZpQ" target="_6EsUAFuAEe6yI_PH36Y4bA" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1Zwco1uFEe6yI_PH36Y4bA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1ZwcpFuFEe6yI_PH36Y4bA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1ZwcoVuFEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1ZwcoluFEe6yI_PH36Y4bA" points="[0, 25, -108, 319]$[0, 55, -108, 349]$[-238, 55, -346, 349]$[-238, -335, -346, -41]$[108, -335, 0, -41]$[108, -319, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1ZxqwFuFEe6yI_PH36Y4bA" id="(0.45454545454545453,0.92)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1ev04VuGEe6yI_PH36Y4bA" type="3001" element="_1ev04FuGEe6yI_PH36Y4bA" source="_q2hVLFkZEe6qr5KVvEEZpQ" target="_w1GJMVuGEe6yI_PH36Y4bA" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1ev05FuGEe6yI_PH36Y4bA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1ev05VuGEe6yI_PH36Y4bA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1ev04luGEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1ev041uGEe6yI_PH36Y4bA" points="[6, 4, 0, -37]$[5, 38, -1, -3]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1ev05luGEe6yI_PH36Y4bA" id="(0.43636363636363634,0.92)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1ev051uGEe6yI_PH36Y4bA" id="(0.49635036496350365,0.06)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1tv6MFuGEe6yI_PH36Y4bA" type="3001" element="_1tuFAFuGEe6yI_PH36Y4bA" source="_w1GJMVuGEe6yI_PH36Y4bA" target="_q2hVPFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1tv6M1uGEe6yI_PH36Y4bA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1tv6NFuGEe6yI_PH36Y4bA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1tv6MVuGEe6yI_PH36Y4bA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1tv6MluGEe6yI_PH36Y4bA" points="[-3, 7, 0, -34]$[-3, 41, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1tv6NVuGEe6yI_PH36Y4bA" id="(0.45985401459854014,0.86)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1tv6NluGEe6yI_PH36Y4bA" id="(0.4383561643835616,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_RG1FcF2bEe67loq3A_eGFw" type="3001" element="_RG0eYF2bEe67loq3A_eGFw" source="_-bDi0F2aEe67loq3A_eGFw" target="_Ntw34F2bEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_RG1Fc12bEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RG1FdF2bEe67loq3A_eGFw" x="68" y="11"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_RG1FcV2bEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RG1Fcl2bEe67loq3A_eGFw" points="[-25, 25, 64, -72]$[-25, 47, 64, -50]$[-89, 47, 0, -50]$[-89, 72, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RG1sgF2bEe67loq3A_eGFw" id="(0.3082191780821918,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RG1sgV2bEe67loq3A_eGFw" id="(0.509090909090909,0.14)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_a2JDYF2bEe67loq3A_eGFw" type="3001" element="_a2IcUF2bEe67loq3A_eGFw" source="_Ntw34F2bEe67loq3A_eGFw" target="_NtwQ0F2bEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_a2JDY12bEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_a2JDZF2bEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_a2JDYV2bEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_a2JDYl2bEe67loq3A_eGFw" points="[3, 0, 0, -43]$[1, 34, -2, -9]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a2KRgF2bEe67loq3A_eGFw" id="(0.4634146341463415,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a2KRgV2bEe67loq3A_eGFw" id="(0.484375,0.18)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_vi1C8V2dEe67loq3A_eGFw" type="3001" element="_vi1C8F2dEe67loq3A_eGFw" source="_vi0b5F2dEe67loq3A_eGFw" target="_vi0b4F2dEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_vi1C8l2dEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vi1C812dEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_vi1C9F2dEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vi1C9V2dEe67loq3A_eGFw" points="[3, 0, 0, -43]$[1, 34, -2, -9]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vi1C9l2dEe67loq3A_eGFw" id="(0.4634146341463415,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vi1C912dEe67loq3A_eGFw" id="(0.484375,0.18)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_IlfPIF2eEe67loq3A_eGFw" type="3001" element="_IleoEF2eEe67loq3A_eGFw" source="_-bDi0F2aEe67loq3A_eGFw" target="_6MqvcV2dEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_IlfPI12eEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IlfPJF2eEe67loq3A_eGFw" x="68" y="-9"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_IlfPIV2eEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IlfPIl2eEe67loq3A_eGFw" points="[24, 25, -67, -72]$[24, 46, -67, -51]$[91, 46, 0, -51]$[91, 72, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ilf2MF2eEe67loq3A_eGFw" id="(0.6575342465753424,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ilf2MV2eEe67loq3A_eGFw" id="(0.5958904109589042,0.02)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_4KMr8F2eEe67loq3A_eGFw" type="3001" element="_4KLd0F2eEe67loq3A_eGFw" source="_6MqvcV2dEe67loq3A_eGFw" target="_vi0b5F2dEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_4KMr812eEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4KNTAF2eEe67loq3A_eGFw" y="-44"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_4KMr8V2eEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4KMr8l2eEe67loq3A_eGFw" points="[24, 25, -69, -59]$[24, 46, -69, -38]$[93, 46, 0, -38]$[93, 59, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4KOhIF2eEe67loq3A_eGFw" id="(0.678082191780822,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4KOhIV2eEe67loq3A_eGFw" id="(0.5691056910569106,0.02)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_tlQ4IV2fEe67loq3A_eGFw" type="3001" element="_tlQ4IF2fEe67loq3A_eGFw" source="_figvEV2fEe67loq3A_eGFw" target="_r9qoMV2fEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_tlQ4JF2fEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tlQ4JV2fEe67loq3A_eGFw" x="84" y="9"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_tlQ4Il2fEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tlQ4I12fEe67loq3A_eGFw" points="[-25, 25, 158, -82]$[-25, 56, 158, -51]$[-183, 56, 0, -51]$[-183, 82, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tlQ4Jl2fEe67loq3A_eGFw" id="(0.3424657534246575,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tlQ4J12fEe67loq3A_eGFw" id="(0.42727272727272725,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_v5kdEF2fEe67loq3A_eGFw" type="3001" element="_v5aFAF2fEe67loq3A_eGFw" source="_figvEV2fEe67loq3A_eGFw" target="_q2hVQFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_v5kdE12fEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_v5kdFF2fEe67loq3A_eGFw" x="65" y="-54"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_v5kdEV2fEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v5kdEl2fEe67loq3A_eGFw" points="[24, 25, -109, -208]$[24, 142, -109, -91]$[133, 142, 0, -91]$[133, 208, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v5lEIF2fEe67loq3A_eGFw" id="(0.6506849315068494,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v5lEIV2fEe67loq3A_eGFw" id="(0.4727272727272727,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="__HZcsF2gEe67loq3A_eGFw" type="3001" element="__HY1oF2gEe67loq3A_eGFw" source="_6MqvcV2dEe67loq3A_eGFw" target="_q2hVQFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="__HZcs12gEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__HZctF2gEe67loq3A_eGFw" x="154" y="50"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="__HZcsV2gEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__HZcsl2gEe67loq3A_eGFw" points="[-25, 25, 111, -466]$[-25, 270, 111, -221]$[-136, 270, 0, -221]$[-136, 466, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__Haq0F2gEe67loq3A_eGFw" id="(0.3287671232876712,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__Haq0V2gEe67loq3A_eGFw" id="(0.5272727272727272,0.08)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_WlhUAF2hEe67loq3A_eGFw" type="3001" element="_WlgF4F2hEe67loq3A_eGFw" source="_Myf6wV2hEe67loq3A_eGFw" target="_q2hVQFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WlhUA12hEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WlhUBF2hEe67loq3A_eGFw" x="85" y="8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_WlhUAV2hEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WlhUAl2hEe67loq3A_eGFw" points="[-25, 25, 206, -124]$[-25, 58, 206, -91]$[-231, 58, 0, -91]$[-231, 124, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WlhUBV2hEe67loq3A_eGFw" id="(0.3082191780821918,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WlhUBl2hEe67loq3A_eGFw" id="(0.5,0.04)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_q6rPQV2hEe67loq3A_eGFw" type="3001" element="_q6rPQF2hEe67loq3A_eGFw" source="_Myf6wV2hEe67loq3A_eGFw" target="_ZXaM0F2hEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q6wu0l2hEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q6wu012hEe67loq3A_eGFw" x="79" y="-7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_q6wu0F2hEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q6wu0V2hEe67loq3A_eGFw" points="[24, 25, -103, -124]$[24, 59, -103, -90]$[127, 59, 0, -90]$[127, 124, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q6wu1F2hEe67loq3A_eGFw" id="(0.6301369863013698,0.9)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q6wu1V2hEe67loq3A_eGFw" id="(0.5818181818181818,0.14)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_pcSwQV2iEe67loq3A_eGFw" type="3001" element="_pcSwQF2iEe67loq3A_eGFw" source="_NtwQ0F2bEe67loq3A_eGFw" target="_n4WRQV2iEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_pcSwRF2iEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pcSwRV2iEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pcSwQl2iEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pcSwQ12iEe67loq3A_eGFw" points="[-1, 4, 0, -45]$[0, 38, 1, -11]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pcVMgF2iEe67loq3A_eGFw" id="(0.5234375,0.92)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pcVMgV2iEe67loq3A_eGFw" id="(0.5182481751824818,0.22)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1-fskV2iEe67loq3A_eGFw" type="3001" element="_1-fskF2iEe67loq3A_eGFw" source="_n4WRQV2iEe67loq3A_eGFw" target="_figvEV2fEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1-fslF2iEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1-fslV2iEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1-fskl2iEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1-fsk12iEe67loq3A_eGFw" points="[1, 25, -1, -65]$[1, 46, -1, -44]$[2, 46, 0, -44]$[2, 65, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1-fsll2iEe67loq3A_eGFw" id="(0.4306569343065693,0.94)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1-fsl12iEe67loq3A_eGFw" id="(0.4931506849315068,0.06)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_f9S3gF2oEe67loq3A_eGFw" type="3001" element="_f9SQcF2oEe67loq3A_eGFw" source="_vi0b4F2dEe67loq3A_eGFw" target="_fIv1IF2oEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_f9S3g12oEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_f9S3hF2oEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_f9S3gV2oEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f9S3gl2oEe67loq3A_eGFw" points="[6, 0, 13, -65]$[62, 60, 69, -5]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f9TekF2oEe67loq3A_eGFw" id="(0.546875,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_oCNwMF2oEe67loq3A_eGFw" type="3001" element="_oCNJIF2oEe67loq3A_eGFw" source="_fIv1IF2oEe67loq3A_eGFw" target="_Myf6wV2hEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_oCNwM12oEe67loq3A_eGFw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_oCNwNF2oEe67loq3A_eGFw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_oCNwMV2oEe67loq3A_eGFw" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oCNwMl2oEe67loq3A_eGFw" points="[4, 2, 0, -35]$[4, 36, 0, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oCO-UF2oEe67loq3A_eGFw" id="(0.4744525547445255,0.96)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oCO-UV2oEe67loq3A_eGFw" id="(0.5,0.02)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_nrKncWNhEe6Gus1XG-D5IA" type="3001" element="_nrKncGNhEe6Gus1XG-D5IA" source="_0VP_0MlhEeKE2tP5OBlA8w" target="_bjiHQGNhEe6Gus1XG-D5IA" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_nrKndGNhEe6Gus1XG-D5IA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nrKndWNhEe6Gus1XG-D5IA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_nrKncmNhEe6Gus1XG-D5IA" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nrKnc2NhEe6Gus1XG-D5IA" points="[24, 4, -193, -31]$[217, 35, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nrL1kGNhEe6Gus1XG-D5IA" id="(0.5,0.92)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nrNDsGNhEe6Gus1XG-D5IA" id="(0.33636363636363636,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1YgrsWQmEe6MCayOJg4GwQ" type="3001" element="_1YgrsGQmEe6MCayOJg4GwQ" source="_q2hVPFkZEe6qr5KVvEEZpQ" target="_0iaKIGQmEe6MCayOJg4GwQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1YgrtGQmEe6MCayOJg4GwQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1YgrtWQmEe6MCayOJg4GwQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1YgrsmQmEe6MCayOJg4GwQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1Ygrs2QmEe6MCayOJg4GwQ" points="[0, 0, 25, -101]$[48, 100, 73, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1Yig4GQmEe6MCayOJg4GwQ" id="(0.6712328767123288,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_1lTKgWQmEe6MCayOJg4GwQ" type="3001" element="_1lTKgGQmEe6MCayOJg4GwQ" source="_0iaKIGQmEe6MCayOJg4GwQ" target="_q2guEFkZEe6qr5KVvEEZpQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1lTKhGQmEe6MCayOJg4GwQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1lTKhWQmEe6MCayOJg4GwQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1lTKgmQmEe6MCayOJg4GwQ" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1lTKg2QmEe6MCayOJg4GwQ" points="[3, 0, 0, -118]$[3, 118, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1lYqEGQmEe6MCayOJg4GwQ" id="(0.5205479452054794,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1lYqEWQmEe6MCayOJg4GwQ" id="(0.5545454545454546,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_D2eFUGihEe6wwJi9ak-h8A" type="3001" element="_D2WJgGihEe6wwJi9ak-h8A" source="_bjiHQGNhEe6Gus1XG-D5IA" target="_-bDi0F2aEe67loq3A_eGFw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_D2eFU2ihEe6wwJi9ak-h8A" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_D2eFVGihEe6wwJi9ak-h8A" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_D2eFUWihEe6wwJi9ak-h8A" fontName="Microsoft JhengHei UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_D2eFUmihEe6wwJi9ak-h8A" points="[9, 4, 0, -168]$[11, 164, 2, -8]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_D2laEGihEe6wwJi9ak-h8A" id="(0.4727272727272727,0.92)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_D2laEWihEe6wwJi9ak-h8A" id="(0.541095890410959,0.16)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>
